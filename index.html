@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOB Landscaping Services LLC | Professional Lawn & Landscaping</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2d5a27;
+      --primary-dark: #1e3d1a;
+      --accent: #8bc34a;
+      --secondary: #4a3728;
+      --light-bg: #f4f7f4;
+      --dark-text: #2c3e50;
+      --white: #ffffff;
+      --shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      color: var(--dark-text);
+      line-height: 1.6;
+      background-color: var(--white);
+    }
+
+    /* Top Bar */
+    .top-bar {
+      background: var(--primary-dark);
+      color: var(--white);
+      padding: 8px 5%;
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .top-bar a {
+      color: var(--white);
+      text-decoration: none;
+      margin-left: 15px;
+    }
+
+    .top-bar a:hover {
+      color: var(--accent);
+    }
+
+    /* Header & Navigation */
+    header {
+      background: var(--white);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      text-decoration: none;
+    }
+
+    .logo i {
+      color: var(--primary);
+      font-size: 1.8rem;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--dark-text);
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: var(--white);
+      padding: 10px 22px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: var(--primary-dark);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1558904541-efa8c1968f01?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: var(--white);
+      padding: 100px 5% 120px;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    /* Service Cards */
+    .services {
+      padding: 80px 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 2.2rem;
+      color: var(--primary-dark);
+      margin-bottom: 10px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      border-top: 4px solid var(--primary);
+      transition: transform 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-card i {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      color: var(--primary-dark);
+    }
+
+    /* Quote Section */
+    .quote-section {
+      background: var(--light-bg);
+      padding: 80px 5%;
+    }
+
+    .quote-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--white);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary-dark);
+      color: var(--white);
+      padding: 40px 5% 20px;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto 30px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      text-align: left;
+    }
+
+    .footer-section h4 {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      color: var(--accent);
+    }
+
+    .footer-section p, .footer-section a {
+      color: #ddd;
+      text-decoration: none;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    @media (max-width: 768px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Contact Bar -->
+  <div class="top-bar">
+    <div>
+      <i class="fas fa-shield-alt"></i> Licensed, Bonded & Insured
+    </div>
+    <div>
+      <a href="mailto:hoblandscaping1@outlook.com"><i class="fas fa-envelope"></i> hoblandscaping1@outlook.com</a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <i class="fas fa-leaf"></i> HOB Landscaping Services LLC
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#quote" class="btn">Get Free Quote</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Quality Outdoor & Landscaping Solutions</h1>
+      <p>Transforming residential and commercial properties with professional lawn care, property maintenance, and custom landscaping.</p>
+      <a href="#quote" class="btn" style="padding: 15px 30px; font-size: 1.1rem;">Request Your Free Quote</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="section-title">
+      <h2>Our Lawn & Landscaping Services</h2>
+      <p>Reliable service tailored to keep your property looking its best year-round.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <i class="fas fa-cut"></i>
+        <h3>Lawn Mowing & Care</h3>
+        <p>Regular mowing, edging, trimming, and fertilizing to maintain a healthy, vibrant lawn.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-seedling"></i>
+        <h3>Property Maintenance</h3>
+        <p>Seasonal yard cleanups, weed management, leaf removal, and general property preservation.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-tree"></i>
+        <h3>Hedge & Tree Trimming</h3>
+        <p>Expert pruning and shaping for hedges, shrubs, and minor tree maintenance.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-mountain"></i>
+        <h3>Mulch & Bark Installation</h3>
+        <p>Fresh bark, mulch, and gravel installation to enhance garden beds and prevent weeds.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Form Section -->
+  <section class="quote-section" id="quote">
+    <div class="quote-container">
+      <div class="section-title" style="margin-bottom: 30px;">
+        <h2>Request a Free Estimate</h2>
+        <p>Fill out the form below and we will respond shortly to discuss your project.</p>
+      </div>
+      <form action="https://formsubmit.co/hoblandscaping1@outlook.com" method="POST">
+        <!-- FormSubmit configuration -->
+        <input type="hidden" name="_subject" value="New Estimate Request - HOB Landscaping">
+        <input type="hidden" name="_captcha" value="false">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="Name" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="Phone" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="Email" required>
+          </div>
+          <div class="form-group">
+            <label for="service">Service Needed</label>
+            <select id="service" name="Service">
+              <option value="Lawn Maintenance">Regular Lawn Maintenance</option>
+              <option value="Yard Cleanup">Seasonal Yard Cleanup</option>
+              <option value="Bark/Mulch">Bark or Mulch Installation</option>
+              <option value="Trimming">Hedge / Pruning Services</option>
+              <option value="Other">Other / Commercial</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Project Details or Property Address</label>
+          <textarea id="message" name="Message" rows="4" placeholder="Tell us a little about what you need done..."></textarea>
+        </div>
+
+        <button type="submit" class="btn" style="width: 100%; padding: 15px; font-size: 1.1rem;">Submit Request</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>HOB Landscaping Services LLC</h4>
+        <p>Dedicated to delivering quality craftsmanship and exceptional customer service for all your landscaping needs.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Contact Info</h4>
+        <p><i class="fas fa-envelope"></i> hoblandscaping1@outlook.com</p>
+        <p><i class="fas fa-check-circle"></i> Fully Registered LLC</p>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2026 HOB Landscaping Services LLC. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
